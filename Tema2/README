@@ -1,0 +1,62 @@
+Cerinta 1:
+Am folosit functia fopen pentru a deschide fisierul.
+Apoi am folosit fscanf pentru a citi numarul de pagini web.
+Am folosit for pentru a citi pe rand indicii fiecarei pagini, numarul
+de link-uri si indicii paginilor cu care are legatura pagina curenta.
+Pe baza datelor am creat matricea de adiacenta.
+Am setat valorile elementelor de pe diagonala la 0.
+Apoi am contruit vectorul L, facand suma elementelor de pe fiecare
+linie din matricea de adiacenta.
+Am creat matricea K care are pe diagonala vectorul K, utilizand
+functia diag.
+Am creat matricea M cu formula (inv(k)*(matricea de adiacenta))'
+Am initializat vectorul ri cu 1/n, apoi am creat vectorul
+curent rn cu formula d*M*ri+((1-d)/n)*unu.(vector unu este vectorul 
+coloana completat cu 1).
+Am calculat eroarea folosind norm(rn-ri).
+Dupa care am folosit un while in care am calculat repetat vectorul curent
+rn cat timp eroarea este mai mare de toleranta eps.
+In final am inchis fisierul de input.
+
+Cerinta 2:
+Pr_inv:
+Am folosit algoritmul Gram-Schimdt pentru a descompune matricea in
+produsl Q*R.
+Apoi intr-un for am folosit repetat functia SST pentru a rezolva
+sistemul R*x=Q'*e(:,i)(e=matricea identitate) si am construit matricea inversa.
+Algebraic:
+Am folosit functia fopen pentru a deschide fisierul.
+Apoi am folosit fscanf pentru a citi numarul de pagini web.
+Am folosit for pentru a citi pe rand indicii fiecarei pagini, numarul
+de link-uri si indicii paginilor cu care are legatura pagina curenta.
+Pe baza datelor am creat matricea de adiacenta.
+Am setat valorile elementelor de pe diagonala la 0.
+Apoi am contruit vectorul L, facand suma elementelor de pe fiecare
+linie din matricea de adiacenta.
+Am creat matricea K care are pe diagonala vectorul K, utilizand
+functia diag.
+Am creat matricea M cu formula (PR_Inv(k)*(matricea de adiacenta))'.
+Am calculat R folosind formula PR_Inv((eye(n)-d*M))*(1-d)/n*ones(n,1).
+In final am inchis fisierul de input.
+
+Cerinta 3:
+Apartenenta:
+Am determinat valorile lui a si b a.i. functia sa fie continua.
+Apoi am determinat valoarea lui y in functie de parametrul x.
+PageRank:
+Am folosit functia fopen pentru a deschide fisierul.
+Apoi am folosit fscanf pentru a citi numarul de pagini web.
+Am folosit for pentru a citi pe rand indicii fiecarei pagini, numarul
+de link-uri si indicii paginilor cu care are legatura pagina curenta.
+Apoi am citit valorile val1 si val2.
+Am contruit numele fisierului de output concatenand ".out" la numele 
+fisierului de intrare pe care l-am deschid cu fopen cu modul write.
+Am afisat in fisierul de output numarul de pagini web.(n)
+Am apelat functia Iterative pentru a determina vectorul R1, dupa care 
+am scris in fisierul de iesire elementele lui.
+Am apelat functia Algebraic pentru a determina vectorul R2, dupa care
+am scris in fisierul de iesire elementele lui.
+Am sortat descrescator vectorul R2 folosit functia 
+[PR1 j]=sort(R2,'descend') unde vectorul j reprezinta indicii paginilor web.
+Apoi am afisat repetat intr-un for i,j(i),Apartenta(PR1(i),val1,val2).
+In final am inchis fisierul de output.
